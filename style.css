@@ -1,0 +1,127 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+        "first second"
+        "third third";
+}
+.container > div:first-child{
+    background-color: rgb(2, 2, 112);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: first;
+}
+.main_box{
+    background-color: rgb(49, 64, 176);
+    display: flex;
+    justify-content: space-around;
+    padding:5% 0%;
+    grid-area: second;
+}
+.main_box > div > ul li{
+    list-style-type: none;
+    margin-top: 20px;
+    color: rgb(233, 233, 233);
+}
+.main_box > div > h3{
+    color:white;
+}
+.help_center,.privacy_setting{
+    display: none;
+}
+
+.container > div:last-child{
+    display: flex;
+    justify-content: space-between;
+    padding:1.5%;
+    background-color:black ;
+    align-items: center;
+    border-top: 1px solid gray;
+    grid-area: third;
+}
+
+.container > div:last-child > div:first-child{
+    width: 50%;
+    align-items: center;
+    display: flex;
+}
+.container > div:last-child >div:first-child img{
+    height: 30px;
+    width: 30px;
+}
+.container > div:last-child >div:first-child span{
+    color: white;
+    padding:0% 1% ;
+}
+
+.container > div:last-child >div:last-child{
+    width: 50%;
+}
+.container > div:last-child >div:last-child ul{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(220, 219, 219);
+}
+.container > div:last-child >div:last-child ul li{
+    display: inline;
+    padding: 2%;
+}
+
+@media (max-width:768px){
+    .container{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-areas: 
+        "third"
+        "second"
+        "first";
+    }
+    .container > div:first-child{
+        padding: 10% 0%;
+    }
+    .main_box{
+        padding:4%;
+    }
+    .container > div:last-child > div:first-child{
+        display: none;
+    }
+    .container > div:last-child > div:last-child{
+        width: 100%;
+    }
+    .main_box > div > ul li{
+        display: none;
+    }
+    .main_box {
+        flex-direction: column;
+        height: 290px;
+    }
+    .help_center,.privacy_setting{
+        display: inline;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .container {
+        grid-template-columns:repeat(1,1fr);
+        grid-template-areas: 
+            "second"
+            "first"
+            "third"
+        ;
+    }
+    .container > div:first-child{
+        padding: 10% 0%;
+    }
+    .container > div:last-child > div:first-child{
+        display: none;
+    }
+    .container > div:last-child > div:last-child{
+        width: 100%;
+    }
+}
+
